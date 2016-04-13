@@ -1,0 +1,16 @@
+<template name="edit">
+  <div class="container">
+
+    <ol class="breadcrumb">
+      <li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+        Home</a>
+      </li>
+      <li><a href="{{blogPathFor 'blogAdmin'}}">Admin</a></li>
+      <li class="active">Edit</li>
+    </ol>
+
+    <div class="row">
+      {{> blogAdminEdit }}  
+    </div>
+  </div>
+</template>

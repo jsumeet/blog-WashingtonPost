@@ -1,0 +1,105 @@
+<template name="home">
+  
+  <header class="jumbotron">
+    <div class="container">
+		<h1> </h1>
+		<h1> </h1>
+		<h1> </h1>
+      <h1>WorldViews</h1>
+      <p>
+        Covering the news and conversation of the world. By The Guardian! 
+      </p>
+    </div>
+  </header>
+  
+  <div class="container">
+  <!--
+    <ol class="breadcrumb">
+      <li><span class="glyphicon glyphicon-home active" aria-hidden="true"></span>
+        Home
+      </li>
+    </ol>
+  -->
+    <div class="row">
+      <div class="col-xs-12 col-sm-8">
+        <h2>Latest News</h2>
+        
+        {{#with latestNews}}
+          <div class="media">
+            <div class="media-left">
+              <a href="{{link}}">
+                <img class="media-object img-thumbnail news-image" 
+                  src="{{image}}">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">{{title}}</h4>
+              <p>
+                <em>
+                  <time datetime="{{pubDate}}">{{formatDate pubDate}}</time>
+                </em>
+                &middot;
+                <a href="{{sourceLink}}">{{sourceName}}</a>
+              </p>
+              <p>{{text}}</p>
+            </div>
+          </div>
+        {{else}}
+          <p>Loading news&hellip;</p>
+        {{/with}}
+        
+        <p class="text-right">
+          <a href="/news">More news&hellip;</a>
+        </p>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <h2>Latest Posts</h2>
+
+        <ul>
+          {{#each latestPosts}}
+            <li>
+              <a href="{{blogPathFor 'blogShow'}}">
+                <h4>{{{title}}}</h4>
+              </a>
+              <p>
+                <em>
+                  <time datetime="{{publishedAt}}">{{formatDate publishedAt}}</time>
+                </em>
+              </p>
+            </li>
+          {{else}}
+            <li>Loading posts&hellip;</li>
+          {{/each}}
+        </ul>
+        
+        <p class="text-right">
+          <a href="{{blogPathFor 'blogIndex'}}">More posts&hellip;</a>
+        </p>
+      </div>
+      
+    </div>
+    <!--
+    <div class="row">
+      <div class="col-xs-12 col-sm-8">
+        <div class="media">
+          <div class="media-left">
+            <a href="/rss/posts" title="RSS Feed">
+              <img class="media-object rss-button" src="rss.png" alt="RSS button">
+            </a>        
+          </div>
+          <div class="media-body">
+            <p>To subscribe to the blog RSS feed:</p>
+            <ul>
+	            <li>Right click on the RSS button</li>
+	            <li>Select <em>'Copy link address'</em> to copy the link</li>
+	            <li>Open your RSS reader app</li>
+	            <li>Paste the link</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>  
+	-->
+  </div>
+</template>

@@ -1,0 +1,40 @@
+<template name="news">
+  <div class="container">
+
+    <ol class="breadcrumb">
+      <li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+        Home</a>
+      </li>
+      <li class="active">News</li>
+    </ol>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>News</h1>
+        <ul class="media-list">
+        {{#each news}}
+          <li class="media">
+            <div class="media-left">
+              <a href="{{link}}">
+                <img class="media-object img-thumbnail news-image" 
+                  src="{{image}}">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">{{title}}</h4>
+              <p>
+                <em>
+                  <time datetime="{{pubDate}}">{{formatDate pubDate}}</time>
+                </em>
+                &middot;
+                <a href="{{sourceLink}}">{{sourceName}}</a>
+              </p>
+              <p>{{text}}</p>
+            </div>
+          </li>
+        {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>

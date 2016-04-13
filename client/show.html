@@ -1,0 +1,20 @@
+<template name="show">
+  <div class="container">
+
+    <ol class="breadcrumb">
+      <li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+        Home</a>
+      </li>
+      <li><a href="{{blogPathFor "blogIndex"}}">Blog</a></li>
+      {{#with post}}
+      <li class="active">{{title}}</li>
+      {{/with}}
+    </ol>
+
+    <div class="row">
+      <div class="col-xs-12">
+        {{> blogShow }}  
+      </div>
+    </div>
+  </div>
+</template>
